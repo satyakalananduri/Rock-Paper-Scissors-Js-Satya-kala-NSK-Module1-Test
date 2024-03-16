@@ -1,0 +1,400 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+:root{
+  --white: #ffffff;
+  --black: #252525;
+  --light-green: #8CC461;
+  --dark-green: #004429;
+  --gray: #656565;
+  --yellow: #FFD600;
+  --inner-green: #1da82b;
+  --mid-green:#1da82b90;
+  --outer-green:#2E9A2563;
+}
+
+.frame{
+  width: 100vw;
+  height: 100vh;
+  background: var(--light-green);
+  color: var(--white);
+  position: relative;
+}
+
+
+/* SCOREBOARD */
+header{
+  display: flex;
+  justify-content: center;
+  width: full;
+  margin-top: 4%;
+}
+
+.scoreBoard{
+  width: 55%;
+  border: 2px solid var(--white);
+  border-radius: 1rem;
+  display: flex;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+h1{
+  letter-spacing: 4px;
+}
+
+.scores{
+  display: flex;
+  gap: 25px;
+  width: 35%;
+}
+
+.scoreCount{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 50% ;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  color: var(--gray);
+  text-transform:uppercase;
+  letter-spacing: 1.7px;
+  padding: 5px;
+}
+
+.compScore, .userScore{
+  justify-self: flex-end;
+  font-size: 55px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+
+/* GAME */
+main{
+  display: flex;
+  justify-content: center;
+  width: full;
+  height: 60%;
+  margin-top: 5%;
+}
+
+
+/* PLAY AREA */
+.playArea{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+    position: relative;
+}
+  
+.playAreaTop{
+    display: flex;
+    justify-content: space-between;
+    width: 55%;
+    height: 40%;
+    z-index: 2;
+}
+
+.playAreaBottom {
+    position: relative; 
+    height: 40%;
+}
+  
+.option, .optionIcon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    z-index: 2;
+}
+  
+#rock{
+    background-image: url("images/rockBG.png");
+}
+
+#scissor{
+    background-image: url("images/scissorsBG.png");
+}
+
+#paper{
+    background-image: url("images/paperBG.png");
+}
+
+.line{
+    width: 250px;
+    height: 15px;
+    background-color: var(--black);
+    position: absolute;
+}
+
+#line1{
+    left: 255px;
+    top: 75px;
+}
+
+#line2{
+    transform: rotate(-55deg);
+    left: 330px;
+    top: 200px;
+}
+
+#line3{
+    transform: rotate(55deg);
+    left: 190px;
+    top: 200px;
+}
+
+
+/* RESULT AREA */
+.resultArea {
+  height: 90%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 5px;
+  display: none;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+}
+
+.resultText{
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.subText{
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+#lostText, #tieText, .replayBtn{
+  display: none;
+}
+
+.result > button {
+  border: 2px solid var(--white);
+  background-color: var(--white);
+  border-radius: 5px;
+  height: 2rem;
+  color:var(--gray);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  width: 70%;
+  cursor: pointer;
+}
+
+.resultOption{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+  width: 32%;
+  height: 70%;
+  background-repeat: no-repeat;
+  background-size: contain; 
+  cursor: pointer;
+  z-index: 2;
+}
+
+.optionText {
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  font-weight: 600;
+  z-index: 1;
+  margin-bottom: 2%;
+}
+
+#user-rock, #pc-rock{
+  background-image: url("images/rockBG.png");
+}
+
+#user-scissor, #pc-scissor{
+  background-image: url("images/scissorsBG.png");
+}
+
+#user-paper, #pc-paper{
+  background-image: url("images/paperBG.png");
+}
+
+.green-background{
+  border: none;
+  box-shadow:
+  0 0 0 10px var(--inner-green) inset, 
+  0 0 0 10px var(--inner-green), 
+  0 0 0 25px var(--mid-green), 
+  0 0 0 40px var(--outer-green);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+
+/* RULES */
+.rules{
+  background-color: var(--dark-green);
+  color: var(--white);
+  height: 44%;
+  width: 23%;
+  border: 7px solid var(--white);
+  border-radius: 2rem;
+  padding: 15px 10px;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 10%;
+  right: 3%;
+  display: none;
+}
+
+.rules h4 {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  height: 15%;
+}
+
+.rules-list {
+  font-size: 0.85rem;
+  list-style-type: none;
+  font-weight: 400;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.ruleRows{
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  height: 50px;
+}
+
+.cross{
+  background-image: url("images/crossBG.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 50%;
+  right: 2%;
+  z-index: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+}
+
+
+/* HURRAY SCREEN */
+.hurrayScreen{
+  width: 100vw;
+  height: 100vh;
+  background: var(--light-green);
+  color: var(--white);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.trophy{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  padding-bottom: 2rem;
+  height: 55%;
+  position: relative;
+  width: 100%;
+}
+
+.stars{
+  position: absolute;
+}
+
+.hurrayMsg{
+  font-size: 5rem;
+  letter-spacing: 9px;
+  height: 15%;
+}
+
+.winMsg{
+  font-size: 2.5rem;
+  letter-spacing: 4px;
+  height: 10%;
+}
+
+.winnerPlayBtn {
+  border: 2px solid var(--white);
+  background-color: var(--white);
+  border-radius: 5px;
+  height: 2.5rem;
+  color:var(--gray);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  width: 12rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+
+/* BUTTONS */
+footer{
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+}
+
+footer > button{
+  border: 2px solid var(--white);
+  background: transparent;
+  width: 7rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.nextBtn{
+  display: none;
+}
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>ROCK PAPER SCISSORS Satya kala JS Module 1 Test</title>
+    <link rel="icon" type="image/x-icon" href="images/sk icon.jpg">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C500">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <body>
+    <div class="frame">
+      <header>
+
+        <!-- SCOREBOARD -->
+        <div class="scoreBoard">
+          <h1>
+            ROCK <br>PAPER <br>SCISSORS
+          </h1>
+          <div class="scores">
+            <div class="scoreCount">
+              Computer <br>Score
+              <div class="compScore">0</div>
+            </div>
+            <div class="scoreCount">
+              Your <br>Score
+              <div class="userScore">0</div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+
+        <!-- PLAY AREA -->
+        <div class="playArea">
+          <div class="playAreaTop">
+            <div class="option" id="rock">
+              <img src="images/rock.png">
+            </div>
+            <div class="line" id="line1"></div>
+            <div class="option" id="scissor">
+              <img src="images/scissors.png" />
+            </div>
+          </div>
+          <div class="line" id="line2"></div>
+          <div class="playAreaBottom option" id="paper">
+            <img src="images/paper.png">
+          </div>
+          <div class="line" id="line3"></div>
+        </div>
+
+        <!-- RESULT AREA -->
+        <div class="resultArea">
+          <div class="resultOption">
+            <div class="optionText">YOU PICKED</div>
+            <div class="userOptionIcon">
+              <div class="optionIcon" id="user-rock">
+                <img src="images/rock.png">
+              </div>
+              <div class="optionIcon" id="user-scissor">
+                <img src="images/scissors.png">
+              </div>
+              <div class="optionIcon" id="user-paper">
+                <img src="images/paper.png">
+              </div>
+            </div>
+          </div>
+          <div class="result">
+            <div class="resultText" id="winText">YOU WON</div>
+            <div class="resultText" id="lostText">YOU LOST</div>
+            <div class="resultText" id="tieText">TIE UP</div>
+            <div class="subText">AGAINST PC</div>
+            <button class="playBtn">PLAY AGAIN</button>
+            <button class="replayBtn">REPLAY</button>
+          </div>
+          <div class="resultOption">
+            <div class="optionText">PC PICKED</div>
+            <div class="pcOptionIcon">
+              <div class="optionIcon" id="pc-rock">
+                <img src="images/rock.png" />
+              </div>
+              <div class="optionIcon" id="pc-scissor">
+                <img src="images/scissors.png" />
+              </div>
+              <div class="optionIcon" id="pc-paper">
+                <img src="images/paper.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- HURRAY SCREEN -->
+    <div class="hurrayScreen">
+      <div class="trophy">
+        <img src="images/trophy.png" alt="trophy image" />
+        <img src="images/stars.png" alt="stars" class="stars" />
+      </div>
+      <div class="hurrayMsg">HURRAY!!</div>
+      <div class="winMsg">YOU WON THE GAME</div>
+      <button class="winnerPlayBtn">PLAY AGAIN</button>
+    </div>
+
+    <!-- RULES -->
+    <div class="cross">
+      <img src="images/X.png" alt="cross" width="50%" height="50%" />
+    </div>
+    <div class="rules">
+      <h4>Game Rules</h4>
+      <div class="rules-list">
+        <div class="ruleRows" id="rule1">
+          <img src="images/rulesBullet.png" alt="1" style="width: 15px; height: 13px;">
+          <p>Rock beats scissors, scissors beat paper, and paper beats rock.</p>
+        </div>
+        <div class="ruleRows" id="rule2">
+          <img src="images/rulesBullet.png" alt="2" style="width: 25px; height: 13px;">
+          <p>Agree ahead of time whether you'll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</p>
+        </div>
+        <div class="ruleRows" id="rule3">
+          <img src="images/rulesBullet.png" alt="3" style="width: 19px; height: 13px;">
+          <p>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</p>
+        </div>
+        <div class="ruleRows" id="rule4">
+          <img src="images/rulesBullet.png" alt="4" style="width: 19px; height: 13px;">
+          <p>If both players lay down the same hand, each player lays down another hand</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <button class="rulesBtn">RULES</button>
+      <button class="nextBtn">NEXT</button>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
